@@ -35,7 +35,8 @@ defmodule Mailman.ExternalSmtpAdapter do
       port: config.port,
       ssl: config.ssl,
       tls: config.tls,
-      auth: config.auth
+      auth: config.auth,
+      no_mx_lookups: Map.get(config, :no_mx_lookups, false)
     ]
   end
 
@@ -48,7 +49,8 @@ defmodule Mailman.ExternalSmtpAdapter do
       ssl: config.ssl,
       tls: config.tls,
       auth: config.auth,
-      hostname: config.hostname
+      hostname: config.hostname,
+      no_mx_lookups: Map.get(config, :no_mx_lookups, false)
     ]
   end
 end
