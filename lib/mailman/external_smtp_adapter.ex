@@ -36,7 +36,7 @@ defmodule Mailman.ExternalSmtpAdapter do
       ssl: config.ssl,
       tls: config.tls,
       auth: config.auth,
-      no_mx_lookups: Map.get(config, :no_mx_lookups, false)
+      no_mx_lookups: config.no_mx_lookups
     ]
   end
 
@@ -50,7 +50,7 @@ defmodule Mailman.ExternalSmtpAdapter do
       tls: config.tls,
       auth: config.auth,
       hostname: config.hostname,
-      no_mx_lookups: Map.get(config, :no_mx_lookups, false)
+      no_mx_lookups: config.no_mx_lookups
     ]
   end
 end
